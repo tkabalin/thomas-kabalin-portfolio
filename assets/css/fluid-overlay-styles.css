@@ -7,15 +7,6 @@
   user-select: none;  /* prevents all text from being selected */
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: auto; /* let body grow with content */
-  background-color: #ffffff;
-  overflow: auto; /* allow scrolling */
-}
-
 /* The animated region */
 canvas {
   width: 100%;
@@ -32,7 +23,7 @@ canvas {
   margin: 0;
   position: absolute;
   text-align: center;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: rgb(0, 0, 0);
