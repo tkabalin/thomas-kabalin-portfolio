@@ -46,8 +46,8 @@
 
     <link rel="icon" href="assets/images/memoji-smile.png" type="image/png" />
 
-    <link rel="stylesheet" href="assets\css\fluid-overlay-styles.css" />
-    <link rel="stylesheet" href="assets\css\style.css" />
+    <link rel="stylesheet" href="assets/css/fluid-overlay-styles.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap"
       rel="stylesheet"
@@ -55,54 +55,13 @@
   </head>
 
   <body>
-    <canvas></canvas>
     <!--The canvas on which the animation is drawn-->
+    <canvas></canvas>
 
     <!--START OF CONTENT-->
 
-    <!--     <div class="glass-button">
-      <div class="glass-filter"></div>
-      <div class="glass-overlay"></div>
-      <div class="glass-specular"></div>
-      <div class="glass-content">
-    <a href="https://github.com/tkabalin/WebGL-Fluid-Background" title="Learn about the background animation">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="black">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
-          </svg>
-        </a>
-    </div>
-    </div> -->
-
-<!--     <div class="info-button">
-      <div class="glass-content">
-        Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools
-        <svg
-          viewBox="0 0 24 24"
-          fill="black"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M12 3.53846C7.32682 3.53846 3.53846 7.32682 3.53846 12C3.53846 16.6732 7.32682 20.4615 12 20.4615C16.6732 20.4615 20.4615 16.6732 20.4615 12C20.4615 7.32682 16.6732 3.53846 12 3.53846ZM2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12Z"
-            fill="#030D45"
-          />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M12 16.359C12.4248 16.359 12.7692 16.0146 12.7692 15.5897V11.4872C12.7692 11.0623 12.4248 10.7179 12 10.7179C11.5752 10.7179 11.2308 11.0623 11.2308 11.4872V15.5897C11.2308 16.0146 11.5752 16.359 12 16.359Z"
-            fill="#030D45"
-          />
-          <path
-            d="M13.0256 8.41026C13.0256 7.84381 12.5664 7.38462 12 7.38462C11.4336 7.38462 10.9744 7.84381 10.9744 8.41026C10.9744 8.9767 11.4336 9.4359 12 9.4359C12.5664 9.4359 13.0256 8.9767 13.0256 8.41026Z"
-            fill="#030D45"
-          />
-        </svg>
-      </div>
-    </div> -->
-
     <a href="https://github.com/tkabalin/WebGL-Fluid-Background">
-      <button class="glass-info-btn">
+      <button class="info-btn">
         <div class="glass-filter"></div>
         <div class="glass-overlay"></div>
         <div class="glass-specular"></div>
@@ -126,12 +85,12 @@
       </button>
     </a>
 
-    <main class="glass-container">
+    <main class="card">
       <div class="glass-filter"></div>
       <div class="glass-overlay"></div>
       <div class="glass-specular"></div>
 
-      <div class="glass-content">
+      <div class="card-content">
         <header>
           <h1>Thomas Kabalin</h1>
           <p class="bio">
@@ -185,8 +144,8 @@
           </a>
         </div>
 
-        <!-- Row 2: Social Tiles -->
-        <div class="social-links-row">
+        <!-- Row 2: Social Icons -->
+        <div class="social-row">
           <a
             href="https://github.com/tkabalin"
             target="_blank"
@@ -229,7 +188,7 @@
 
     <!--END OF CONTENT-->
 
-    <!-- Liquid Glass -->
+    <!-- Liquid Glass distortion filter -->
     <svg style="display: none">
       <filter id="glass-distortion">
         <feTurbulence
