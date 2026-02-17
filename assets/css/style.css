@@ -201,8 +201,6 @@ p.bio {
   border-radius: 50%;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
-  justify-self: center;
-  align-self: center;
   pointer-events: all;
 }
 
