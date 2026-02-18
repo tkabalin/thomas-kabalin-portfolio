@@ -1,6 +1,6 @@
 # Copyright and License
 
-© 2025 **Thomas Kabalin**. All rights reserved.
+© 2026 **Thomas Kabalin**. All rights reserved.
 
 ## License Terms
 

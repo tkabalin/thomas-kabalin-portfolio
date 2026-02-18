@@ -8,8 +8,8 @@
 
 ## License
 
-© 2025 **Thomas Kabalin**. All rights reserved.  
+© 2026 **Thomas Kabalin**. All rights reserved.  
 
 This project is **fully protected by copyright**. You **may not copy, distribute, or modify** the code without explicit permission from the author.  
 
-> For inquiries or permission requests, please contact: [thomas@kabalin.com](mailto:thomas@kabalin.com).
+> For inquiries or permission requests, please contact: [contact@thomaskabalin.com](mailto:contact@thomaskabalin.com).
