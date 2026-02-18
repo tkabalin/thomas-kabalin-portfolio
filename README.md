@@ -1,7 +1,8 @@
 # Thomas Kabalin's Portfolio
 ![License: All Rights Reserved](https://img.shields.io/badge/License-All%20Rights%20Reserved-red)
 
-*Work in Progress*
+This is my personal portfolio website — a simple, clean tech demo showcasing my projects, skills, and work.  
+It serves as a single hub with links to all my online profiles, projects, and other work.
 
 ## Credit
 [WebGL Fluid Simulation](https://github.com/PavelDoGreat/WebGL-Fluid-Simulation) by Pavel Dobryakov
