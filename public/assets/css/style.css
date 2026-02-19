@@ -28,7 +28,7 @@ body {
     background-color: var(--color-slate-50);
     color: var(--color-slate-900);
     overflow: hidden;
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -416,7 +416,7 @@ p.bio {
     }
 }
 
-/* ── Landscape phones ── */
+/* Landscape phones */
 @media (max-height: 500px) and (orientation: landscape) {
     .card {
         padding: 1.5rem 2.5rem;
@@ -442,7 +442,7 @@ p.bio {
     }
 }
 
-/* ── Reduce motion ── */
+/* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
     .card, .link-item, .social-link {
         animation: none;
