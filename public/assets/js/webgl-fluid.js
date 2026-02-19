@@ -1281,7 +1281,7 @@ function runSimulation(config) {
 
   updateKeywords();
   initFramebuffers();
-  multipleSplats(parseInt(0));
+  multipleSplats(0);
 
   let lastUpdateTime = Date.now();
   let colorUpdateTimer = 0.0;
@@ -1686,11 +1686,6 @@ function runSimulation(config) {
       if (pointer == null) continue;
       updatePointerUpData(pointer);
     }
-  });
-
-  window.addEventListener("keydown", (e) => {
-    if (e.code === "KeyP") config.PAUSED = !config.PAUSED;
-    if (e.key === " ") splatStack.push(parseInt(Math.random() * 20) + 5);
   });
 
   function updatePointerDownData(pointer, id, posX, posY) {
