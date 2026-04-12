@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  THOMAS KABALIN — BRAND PALETTE & COMPONENT REFERENCE
+  ============================================================
+  This file is the authoritative design reference for all
+  Thomas Kabalin branded interfaces. When building any new
+  page, tool, document, or component in this brand, consult
+  this file for tokens, type styles, and component patterns.
+
+  QUICK REFERENCE
+  ───────────────
+  Primary action colour : --brand-teal        (#00727D)
+  Teal hover state      : --brand-teal-hover  (#005F69)
+  Teal active state     : --brand-teal-dark   (#0F4C52)
+  Dark headline colour  : --brand-ink         (#0F172A)  [= --text-primary]
+  Page background       : --surface-3         (#F1F5F9)
+  Card / input surface  : --surface-1         (#FFFFFF)
+  Secondary btn fill    : --surface-button-secondary (#E2E8F0)
+  Body copy colour      : --text-secondary    (#334155)
+  Muted / subtitle text : --text-subtle       (#64748B)
+  Label / footer text   : --text-tertiary     (#94A3B8)
+  Font (sans)           : Inter (Google Fonts), sans-serif fallback
+  Font (mono)           : SF Mono / Fira Code / Courier New
+
+  DESIGN PRINCIPLES
+  ─────────────────
+  • Teal is the sole accent colour — use it for interactive elements,
+    accent borders, and brand marks only. Never use it for body text.
+  • Ink (#0F172A) is used for display-size headings and dark solid bars
+    (e.g. business card top bar). For smaller headings use --text-primary
+    which resolves to the same value.
+  • The surface scale runs light-to-lighter: surface-3 (page) →
+    surface-2 (code/notes) → surface-1 (cards/inputs) → white.
+  • All borders use a single token: --border-default (#E2E8F0).
+  • Warning semantic tokens exist for notice/alert UI only.
+  • Print documents (invoice, timesheet) use surface-1 as the
+    page surface and render at 820px design width before scaling.
+  ============================================================
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thomas Kabalin — Brand Palette</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     RESET
+     ============================================================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ============================================================
+     DESIGN TOKENS
+     ============================================================
+     Use these CSS custom properties in all branded interfaces.
+     Do not hardcode hex values — reference tokens only.
+
+     TOKEN GROUPS:
+       Brand      — primary accent, tinted surface, ink
+       Text       — four-step greyscale text scale
+       Surfaces   — three-step background scale + white card surface
+       Borders    — single border token
+       Semantic   — warning state only (amber)
+       Typography — single font family: Inter
+     ============================================================ */
+  :root {
+
+    /* ── Brand ──────────────────────────────────────────────
+       brand-teal        : primary accent; buttons, CTAs, document
+                           badges, teal accent borders, teal text labels
+       brand-teal-hover  : hover state for teal interactive elements
+       brand-teal-dark   : active/pressed state for teal elements
+       brand-teal-surface: tinted background; banking/notes blocks,
+                           pill backgrounds, add-item button background
+       brand-ink         : near-black for display headings and dark
+                           solid elements (business card bars, doc header)
+    ─────────────────────────────────────────────────────── */
+    --brand-teal:         #00727D;
+    --brand-teal-hover:   #005F69;
+    --brand-teal-dark:    #0F4C52;
+    --brand-teal-surface: #F0FAFB;
+    --brand-ink:          #0F172A;
+
+    /* ── Text ───────────────────────────────────────────────
+       Four steps from dark to light. Use in order of emphasis:
+         primary   : headings, totals, strong values (aliases brand-ink)
+         secondary : standard body copy, table cell text, billing/
+                     address blocks, bank detail body text
+         subtle    : subtitles, contact info, bio text, input
+                     placeholders, muted descriptive text
+         tertiary  : table column headers, footer text, section
+                     labels, eyebrow text above cards
+    ─────────────────────────────────────────────────────── */
+    --text-primary:   var(--brand-ink);
+    --text-secondary: #334155;
+    --text-subtle:    #64748B;
+    --text-tertiary:  #94A3B8;
+
+    /* ── Surfaces ───────────────────────────────────────────
+       Three-step background scale:
+         surface-1 : white — cards, input fields, print document page
+         surface-2 : off-white — code blocks, notes section bg,
+                     table zebra rows
+         surface-3 : light slate — page/app background
+    ─────────────────────────────────────────────────────── */
+    --surface-1: #FFFFFF;
+    --surface-2: #F8FAFC;
+    --surface-3: #F1F5F9;
+
+    /* ── Borders ────────────────────────────────────────────
+       Single border token used everywhere: card edges, input
+       borders, dividers, table row separators.
+    ─────────────────────────────────────────────────────── */
+    --border-default: #E2E8F0;
+
+    /* ── Surfaces (extended) ────────────────────────────────
+       Dedicated surface token for secondary button fill.
+       Resolves to the same value as border-default for now,
+       but semantically distinct so changes propagate correctly.
+    ─────────────────────────────────────────────────────── */
+    --surface-button-secondary: #E2E8F0;
+
+    /* ── Semantic — Warning ─────────────────────────────────
+       Amber amber trio for notice/alert UI only (e.g. pop-up blocked
+       notice in invoice/timesheet generators).
+    ─────────────────────────────────────────────────────── */
+    --color-warning-bg:     #FFFBEB;
+    --color-warning-border: #FDE68A;
+    --color-warning-text:   #B45309;
+
+    /* ── Border Radius ──────────────────────────────────────
+       Four steps from tight to pill. Use consistently:
+         radius-sm   : inputs, small buttons, pills (inner)
+         radius-md   : standard buttons, badges, small cards
+         radius-lg   : cards, info blocks, code blocks
+         radius-pill : full-pill tags, toggle controls
+    ─────────────────────────────────────────────────────── */
+    --radius-sm:   6px;
+    --radius-md:   8px;
+    --radius-lg:   12px;
+    --radius-pill: 99px;
+
+    /* ── Typography ─────────────────────────────────────────
+       Single font family across all products. Load from Google Fonts:
+       family=Inter:wght@400;500;600;700
+       See Typography section below for named type styles.
+    ─────────────────────────────────────────────────────── */
+    --font-brand: 'Inter', sans-serif;
+    --font-mono:  'SF Mono', 'Fira Code', 'Courier New', monospace;
+  }
+
+  /* ============================================================
+     BASE
+     ============================================================ */
+  body {
+    font-family: var(--font-brand);
+    background: var(--surface-3);   /* page background */
+    color: var(--text-primary);
+    padding: 3rem 2rem;
+    min-height: 100vh;
+  }
+  .container { max-width: 900px; margin: 0 auto; }
+
+  /* ============================================================
+     PAGE HEADER
+     ============================================================
+     Uses the three header type styles in sequence:
+       eyebrow → display/hero → body-long subtitle
+     This header pattern can be reused on any branded page.
+     ============================================================ */
+  .header { margin-bottom: 3rem; }
+
+  /* Eyebrow: 400 weight, tracked uppercase, brand-teal */
+  .header-eyebrow {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brand-teal);
+    margin-bottom: 8px;
+  }
+
+  /* Display/Hero heading */
+  .header-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--brand-ink);
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+  }
+
+  /* Subtitle / descriptor below hero */
+  .header-sub {
+    font-size: 14px;
+    color: var(--text-subtle);
+    margin-top: 8px;
+    font-weight: 400;
+  }
+
+  /* ============================================================
+     SECTION LAYOUT
+     ============================================================
+     Each palette/component group is wrapped in .section.
+     .section-label is the Section Label type style — 700 weight,
+     tracked uppercase, text-tertiary. Used for all group headings
+     throughout the UI (e.g. "Invoice Details", "Employee Details").
+     ============================================================ */
+  .section { margin-bottom: 2.5rem; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 14px;
+  }
+
+  /* ============================================================
+     DIVIDER
+     ============================================================ */
+  hr { border: none; border-top: 1px solid var(--border-default); margin: 2rem 0; }
+
+  /* ============================================================
+     COLOUR SWATCHES  (palette doc only — not a reusable component)
+     ============================================================ */
+  .swatches { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .swatch-card {
+    flex: 1;
+    min-width: 110px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-default);
+    background: var(--surface-1);
+  }
+
+  .swatch-block  { height: 72px; width: 100%; }
+  .swatch-info   { padding: 9px 11px; }
+  .swatch-name   { font-size: 12px; font-weight: 600; color: var(--text-primary); margin-bottom: 2px; }
+  .swatch-hex    { font-size: 11px; color: var(--text-secondary); font-family: var(--font-mono); }
+  .swatch-usage  { font-size: 10px; color: var(--text-tertiary); margin-top: 3px; line-height: 1.4; }
+
+  /* ============================================================
+     TYPOGRAPHY SCALE  (palette doc only)
+     ============================================================
+     Each row shows: [meta label] [live rendered sample]
+     align-items: center ensures both columns sit vertically centred
+     regardless of the sample's rendered height.
+     ============================================================ */
+  .text-scale { display: flex; flex-direction: column; gap: 8px; }
+
+  .text-scale-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-default);
+    background: var(--surface-1);
+    min-height: 56px;
+  }
+
+  .text-scale-meta {
+    width: 200px;
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-tertiary);
+    line-height: 1.5;
+    align-self: center;
+  }
+
+  .text-scale-sample { flex: 1; }
+
+  /* ============================================================
+     COMPONENT SHOWCASE GRID  (palette doc only)
+     ============================================================ */
+  .component-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  /* Standard card wrapper — white surface, border, rounded corners.
+     This is the canonical card style used across all products. */
+  .component-card {
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-default);
+    background: var(--surface-1);
+    padding: 16px;
+  }
+
+  /* Small uppercase label inside a component card — same as section-label
+     but used to name the component rather than a page section. */
+  .component-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-tertiary);
+    margin-bottom: 12px;
+  }
+
+  /* ============================================================
+     TASK PILLS
+     ============================================================
+     Used in the Timesheet Generator for task/category tags.
+     Background: brand-teal-surface, text: brand-teal.
+     Pattern: small rounded pill, 500 weight, nowrap.
+     ============================================================ */
+  .pill {
+    display: inline-block;
+    background: var(--brand-teal-surface);
+    color: var(--brand-teal);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: var(--radius-pill);
+    margin-right: 5px;
+    margin-bottom: 4px;
+    white-space: nowrap;
+  }
+
+  /* ============================================================
+     BUTTONS
+     ============================================================
+     Three button variants used across invoice and timesheet tools:
+
+     btn-primary   : solid brand-teal background, white text.
+                     Used for forward actions: "Preview →", "Save PDF"
+     btn-secondary : border-default background, text-secondary text.
+                     Used for back/cancel actions: "← Edit"
+     btn-add       : brand-teal-surface bg, dashed teal border, teal text.
+                     Used for additive actions: "+ Add Line Item"
+     ============================================================ */
+  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+  .btn {
+    padding: 10px 22px;
+    border-radius: var(--radius-md);
+    font-family: var(--font-brand);
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    cursor: default;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary   { background: var(--brand-teal); color: var(--surface-1); }
+  .btn-secondary { background: var(--surface-button-secondary); color: var(--text-secondary); }
+
+  .btn-add {
+    background: var(--brand-teal-surface);
+    color: var(--brand-teal);
+    border: 1px dashed var(--brand-teal);
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--font-brand);
+    cursor: default;
+  }
+
+  /* ============================================================
+     DOCUMENT BADGE
+     ============================================================
+     The "INVOICE" / "TIMESHEET" stamp that appears top-right in
+     print documents. Solid brand-teal fill, white text, wide
+     letter-spacing, no border-radius (intentionally sharp).
+     ============================================================ */
+  .invoice-badge {
+    background: var(--brand-teal);
+    color: var(--surface-1);
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  /* ============================================================
+     INFO BLOCKS  (Option B — card with coloured top bar)
+     ============================================================
+     Three variants sharing the same card structure:
+       .info-block           : base card — white, bordered, rounded,
+                               subtle shadow, no padding on top
+       .info-block--teal     : teal top bar (banking details)
+       .info-block--slate    : slate/border top bar (notes)
+       .info-block--warning  : amber top bar (warnings / notices)
+
+     Structure:
+       <div class="info-block info-block--teal">
+         <div class="info-block__bar"></div>
+         <div class="info-block__body">
+           <div class="info-block__label">Label</div>
+           <div class="info-block__content">…</div>
+         </div>
+       </div>
+
+     The top bar is a 4px solid stripe rendered as a dedicated child
+     div rather than border-top, so it can be independently coloured
+     without affecting the card's overall border.
+     ============================================================ */
+  .info-block {
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-default);
+    background: var(--surface-1);
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 4px 12px rgba(15, 23, 42, 0.06);
+  }
+
+  /* The 4px coloured top stripe — colour is set per variant below */
+  .info-block__bar {
+    height: 4px;
+    width: 100%;
+  }
+
+  .info-block__body {
+    padding: 14px 16px 16px;
+  }
+
+  /* Label row inside info block — same Section Label style */
+  .info-block__label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+
+  /* Body content — Body Detail style */
+  .info-block__content {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  /* Teal variant — banking details, teal-accented info */
+  .info-block--teal .info-block__bar   { background: var(--brand-teal); }
+  .info-block--teal .info-block__label { color: var(--brand-teal); }
+
+  /* Slate variant — notes, supplementary info */
+  .info-block--slate .info-block__bar   { background: var(--border-default); }
+  .info-block--slate .info-block__label { color: var(--text-tertiary); }
+
+  /* Warning variant — error notices, blocked popups, alerts */
+  .info-block--warning .info-block__bar     { background: var(--color-warning-border); }
+  .info-block--warning .info-block__label   { color: var(--color-warning-text); }
+  .info-block--warning .info-block__body    { background: var(--color-warning-bg); }
+  .info-block--warning .info-block__content { color: var(--color-warning-text); }
+
+  /* ============================================================
+     TOTAL LINE
+     ============================================================
+     The "Total Due / R 12,500.00" row at the bottom of invoices
+     and timesheets. 3px teal top border, 700 weight, 18–20px.
+     ============================================================ */
+  .total-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 0 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    border-top: 3px solid var(--brand-teal);
+    margin-top: 8px;
+  }
+
+  /* ============================================================
+     CODE BLOCK  (palette doc only)
+     ============================================================
+     Surface-2 background, monospace font, text-tertiary comments.
+     ============================================================ */
+  .code-block {
+    background: var(--surface-2);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    border: 1px solid var(--border-default);
+  }
+
+  .code-block pre {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--text-primary);
+    line-height: 2;
+    white-space: pre-wrap;
+  }
+
+  .code-comment { color: var(--text-tertiary); }
+
+  /* ============================================================
+     PAGE FOOTER
+     ============================================================ */
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-default);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-text { font-size: 12px; color: var(--text-tertiary); }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ============================================================
+       PAGE HEADER
+       Eyebrow → Display/Hero → Body-Long subtitle
+       ============================================================ -->
+  <div class="header">
+    <div class="header-eyebrow">Personal Brand System</div>
+    <div class="header-title" style="color:var(--brand-ink);">Thomas Kabalin</div>
+    <div class="header-sub" style="color:var(--text-subtle);">Colour palette · Typography · Components</div>
+  </div>
+
+  <!-- ============================================================
+       COLOUR PALETTE
+       ============================================================ -->
+
+  <!-- Brand: the three primary brand tokens -->
+  <div class="section">
+    <div class="section-label">Brand</div>
+    <div class="swatches">
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#00727D;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Teal</div>
+          <div class="swatch-hex">#00727D</div>
+          <div class="swatch-usage">Buttons · CTAs · Badges · Accent borders · Teal text labels</div>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#005F69;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Teal Hover</div>
+          <div class="swatch-hex">#005F69</div>
+          <div class="swatch-usage">Hover state for teal interactive elements</div>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#0F4C52;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Teal Dark</div>
+          <div class="swatch-hex">#0F4C52</div>
+          <div class="swatch-usage">Active / pressed state for teal elements</div>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#F0FAFB; border-bottom:1px solid #e2e8f0;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Teal Surface</div>
+          <div class="swatch-hex">#F0FAFB</div>
+          <div class="swatch-usage">Banking/info block bg · Add item btn bg · Task pill bg</div>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#0F172A;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Ink</div>
+          <div class="swatch-hex">#0F172A</div>
+          <div class="swatch-usage">Display headings · Total values · Dark solid bars</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Surfaces: page background through card/input white -->
+  <div class="section">
+    <div class="section-label">Surfaces</div>
+    <div class="swatches">
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#FFFFFF; border-bottom:1px solid #e2e8f0;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Surface 1</div>
+          <div class="swatch-hex">#FFFFFF</div>
+          <div class="swatch-usage">Cards · Input fields · Print document page surface</div>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#F8FAFC; border-bottom:1px solid #e2e8f0;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Surface 2</div>
+          <div class="swatch-hex">#F8FAFC</div>
+          <div class="swatch-usage">Code blocks · Notes section bg · Table zebra rows</div>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#F1F5F9; border-bottom:1px solid #e2e8f0;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Surface 3</div>
+          <div class="swatch-hex">#F1F5F9</div>
+          <div class="swatch-usage">Page / app background · Time entry list bg</div>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#E2E8F0; border-bottom:1px solid #e2e8f0;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Border</div>
+          <div class="swatch-hex">#E2E8F0</div>
+          <div class="swatch-usage">All borders · Dividers · Secondary btn bg · Table row separators</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Text: four-step greyscale text scale -->
+  <div class="section">
+    <div class="section-label">Text</div>
+    <div class="swatches">
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#0F172A;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Primary</div>
+          <div class="swatch-hex">#0F172A</div>
+          <div class="swatch-usage">Headings · Strong values · Total amounts</div>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#334155;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Secondary</div>
+          <div class="swatch-hex">#334155</div>
+          <div class="swatch-usage">Table cells · Body copy · Billing address · Bank details body</div>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#64748B;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Subtle</div>
+          <div class="swatch-hex">#64748B</div>
+          <div class="swatch-usage">Subtitles · Contact info · Placeholders · Bio / descriptor text</div>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#94A3B8;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Tertiary</div>
+          <div class="swatch-hex">#94A3B8</div>
+          <div class="swatch-usage">Table column headers · Footer text · Section labels · Eyebrows</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Semantic: warning/alert amber trio -->
+  <div class="section">
+    <div class="section-label">Semantic — Warning</div>
+    <div class="swatches">
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#FFFBEB; border-bottom:1px solid #e2e8f0;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Warning BG</div>
+          <div class="swatch-hex">#FFFBEB</div>
+          <div class="swatch-usage">Notice / alert background</div>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#FDE68A; border-bottom:1px solid #e2e8f0;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Warning Border</div>
+          <div class="swatch-hex">#FDE68A</div>
+          <div class="swatch-usage">Notice / alert top bar · border</div>
+        </div>
+      </div>
+
+      <div class="swatch-card">
+        <div class="swatch-block" style="background:#B45309;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Warning Text</div>
+          <div class="swatch-hex">#B45309</div>
+          <div class="swatch-usage">Notice / alert label and body text</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ============================================================
+       TYPOGRAPHY
+       ============================================================
+       Named type styles used across all products. Each row shows
+       the spec (left) and a live rendered sample (right).
+
+       HOW TO USE:
+         Display/Hero  → page title, document sender name
+         Heading H1    → tool title, section title (top-level)
+         Heading H2    → form section label, card heading
+         Section Label → group headings within pages/cards
+         Eyebrow       → pre-title context, institution name,
+                         category above a heading
+         Body — Long   → bio text, portfolio description, instructions
+         Body — Detail → multi-line structured data: addresses,
+                         bank details, notes paragraphs, "Bill To" content
+       ============================================================ -->
+  <div class="section">
+    <div class="section-label">Typography — Inter</div>
+    <div class="text-scale">
+
+      <!-- Display / Hero: large page title or document sender name -->
+      <div class="text-scale-row">
+        <div class="text-scale-meta">Display / Hero<br>700 · -0.03em · 30px · text-primary</div>
+        <div class="text-scale-sample" style="font-size:30px; font-weight:700; color:var(--text-primary); letter-spacing:-0.03em; line-height:1.2;">Thomas Kabalin</div>
+      </div>
+
+      <!-- Heading H1: tool/page name, used in edit-view topbars -->
+      <div class="text-scale-row">
+        <div class="text-scale-meta">Heading H1<br>700 · -0.02em · 26px · text-primary</div>
+        <div class="text-scale-sample" style="font-size:26px; font-weight:700; color:var(--text-primary); letter-spacing:-0.02em; line-height:1.2;">Invoice Generator</div>
+      </div>
+
+      <!-- Heading H2: form/card section titles -->
+      <div class="text-scale-row">
+        <div class="text-scale-meta">Heading H2<br>700 · 20px · text-primary</div>
+        <div class="text-scale-sample" style="font-size:20px; font-weight:700; color:var(--text-primary); line-height:1.3;">Invoice Details</div>
+      </div>
+
+      <!-- Section Label: group headings, table col headers, card sub-labels.
+           This is also the style used for .section-label on this page. -->
+      <div class="text-scale-row">
+        <div class="text-scale-meta">Section Label<br>700 · 0.08em · 11px · UPPERCASE · text-tertiary</div>
+        <div class="text-scale-sample" style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-tertiary);">Brand</div>
+      </div>
+
+      <!-- Eyebrow: light-weight tracked uppercase above a heading or card.
+           Used on business card ("University of Cape Town") and palette
+           page header ("Personal Brand System"). -->
+      <div class="text-scale-row">
+        <div class="text-scale-meta">Eyebrow<br>400 · 0.1em · UPPERCASE · text-subtle</div>
+        <div class="text-scale-sample" style="font-size:15px; font-weight:400; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-subtle);">University of Cape Town</div>
+      </div>
+
+      <!-- Body — Long: flowing prose, bio text, portfolio description.
+           colour: text-subtle to keep it visually light. -->
+      <div class="text-scale-row">
+        <div class="text-scale-meta">Body — Long<br>400 · 15px · 1.6lh · text-subtle</div>
+        <div class="text-scale-sample" style="font-size:15px; font-weight:400; color:var(--text-subtle); line-height:1.6;">Learning to develop real-world solutions where business meets technology.</div>
+      </div>
+
+      <!-- Body — Detail: structured multi-line data.
+           Used in "Bill To", bank details body, notes paragraphs.
+           colour: text-secondary (slightly darker than Body Long). -->
+      <div class="text-scale-row">
+        <div class="text-scale-meta">Body — Detail<br>400 · 13px · 1.7lh · text-secondary</div>
+        <div class="text-scale-sample" style="font-size:13px; font-weight:400; color:var(--text-secondary); line-height:1.7;">Thomas Kabalin<br>123 Main Road<br>Cape Town, 8001</div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ============================================================
+       COMPONENTS
+       ============================================================ -->
+  <div class="section">
+    <div class="section-label">Components</div>
+    <div class="component-grid">
+
+      <!-- Buttons: primary, secondary, add-item -->
+      <div class="component-card">
+        <div class="component-card-label">Buttons</div>
+        <div class="btn-row">
+          <button class="btn btn-primary">Preview →</button>
+          <button class="btn btn-secondary">← Edit</button>
+        </div>
+        <div style="margin-top:10px;">
+          <button class="btn-add">+ Add Line Item</button>
+        </div>
+      </div>
+
+      <!-- Document Badge: INVOICE / TIMESHEET stamp, top-right of print docs -->
+      <div class="component-card">
+        <div class="component-card-label">Document Badge</div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <div class="invoice-badge">INVOICE</div>
+          <div class="invoice-badge">TIMESHEET</div>
+        </div>
+      </div>
+
+      <!-- Task Pills: used in Timesheet Generator for task tags -->
+      <div class="component-card">
+        <div class="component-card-label">Task Pills</div>
+        <div>
+          <span class="pill">Development Work</span>
+          <span class="pill">Code Review</span>
+          <span class="pill">Bug Fix</span>
+          <span class="pill">API Integration</span>
+        </div>
+      </div>
+
+      <!-- Total Line: bottom of invoice/timesheet, 3px teal top border -->
+      <div class="component-card">
+        <div class="component-card-label">Total Line</div>
+        <div class="total-line">
+          <span>Total Due</span>
+          <span>R&nbsp;12,500.00</span>
+        </div>
+      </div>
+
+      <!-- Info Blocks: Option B — card with coloured top bar.
+           Three variants: teal (banking), slate (notes), warning (alerts).
+           Each block has a 4px top bar, white body, subtle shadow. -->
+      <div class="component-card" style="grid-column: span 2;">
+        <div class="component-card-label">Info Blocks</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+
+          <!-- Teal variant: banking details, payment reference info -->
+          <div class="info-block info-block--teal">
+            <div class="info-block__bar"></div>
+            <div class="info-block__body">
+              <div class="info-block__label">Banking Details</div>
+              <div class="info-block__content">Bank: FNB<br>Account: 12345678<br>Branch: 250655</div>
+            </div>
+          </div>
+
+          <!-- Slate variant: notes, payment terms, supplementary text -->
+          <div class="info-block info-block--slate">
+            <div class="info-block__bar"></div>
+            <div class="info-block__body">
+              <div class="info-block__label">Notes</div>
+              <div class="info-block__content">Payment due within 30 days. Thank you for your business.</div>
+            </div>
+          </div>
+
+          <!-- Warning variant: error notices, blocked popups, system alerts -->
+          <div class="info-block info-block--warning">
+            <div class="info-block__bar"></div>
+            <div class="info-block__body">
+              <div class="info-block__label">Notice</div>
+              <div class="info-block__content">Pop-up blocked. Downloaded HTML instead — open it and print from your browser.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ============================================================
+       CSS VARIABLES REFERENCE
+       ============================================================
+       Copy this :root block into any new branded page or Worker.
+       ============================================================ -->
+  <div class="section">
+    <div class="section-label">CSS Variables</div>
+    <div class="code-block">
+      <pre><span class="code-comment">/* Brand */</span>
+--brand-teal:         #00727D;   <span class="code-comment">/* buttons, CTAs, badges, accent borders */</span>
+--brand-teal-hover:   #005F69;   <span class="code-comment">/* hover state for teal interactive elements */</span>
+--brand-teal-dark:    #0F4C52;   <span class="code-comment">/* active / pressed state */</span>
+--brand-teal-surface: #F0FAFB;   <span class="code-comment">/* tinted blocks, pill bg, add-item btn */</span>
+--brand-ink:          #0F172A;   <span class="code-comment">/* display headings, dark solid bars */</span>
+
+<span class="code-comment">/* Text */</span>
+--text-primary:   var(--brand-ink);   <span class="code-comment">/* headings, strong values — aliases brand-ink */</span>
+--text-secondary: #334155;            <span class="code-comment">/* table cells, body copy, billing address */</span>
+--text-subtle:    #64748B;            <span class="code-comment">/* subtitles, contact info, placeholders */</span>
+--text-tertiary:  #94A3B8;            <span class="code-comment">/* table headers, footer, section labels */</span>
+
+<span class="code-comment">/* Surfaces */</span>
+--surface-1:                #FFFFFF;   <span class="code-comment">/* cards, inputs, print document surface */</span>
+--surface-2:                #F8FAFC;   <span class="code-comment">/* code blocks, notes bg */</span>
+--surface-3:                #F1F5F9;   <span class="code-comment">/* page / app background */</span>
+--surface-button-secondary: #E2E8F0;   <span class="code-comment">/* secondary button fill */</span>
+
+<span class="code-comment">/* Borders */</span>
+--border-default: #E2E8F0;   <span class="code-comment">/* all borders, dividers, table separators */</span>
+
+<span class="code-comment">/* Border Radius */</span>
+--radius-sm:   6px;    <span class="code-comment">/* inputs, small inner elements */</span>
+--radius-md:   8px;    <span class="code-comment">/* buttons, badges, small cards */</span>
+--radius-lg:   12px;   <span class="code-comment">/* cards, info blocks, code blocks */</span>
+--radius-pill: 99px;   <span class="code-comment">/* full-pill tags, toggle controls */</span>
+
+<span class="code-comment">/* Typography */</span>
+--font-brand: 'Inter', sans-serif;
+--font-mono:  'SF Mono', 'Fira Code', 'Courier New', monospace;
+
+<span class="code-comment">/* Semantic — Warning */</span>
+--color-warning-bg:     #FFFBEB;
+--color-warning-border: #FDE68A;
+--color-warning-text:   #B45309;</pre>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-text">thomaskabalin.com</div>
+    <div class="footer-text">Brand Palette · 2026</div>
+  </div>
+
+</div>
+</body>
+</html>
