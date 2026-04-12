@@ -1,18 +1,56 @@
 /* Variables */
 :root {
-    --color-slate-50: #f8fafc;
-    --color-slate-100: #f1f5f9;
-    --color-slate-200: #e2e8f0;
-    --color-slate-300: #cbd5e1;
-    --color-slate-400: #94a3b8;
-    --color-slate-500: #64748b;
-    --color-slate-600: #475569;
-    --color-slate-700: #334155;
-    --color-slate-800: #1e293b;
-    --color-slate-900: #0f172a;
-    --color-accent: #00727D;
+    /* Brand */
+    --brand-teal: #00727D;
+    --brand-teal-hover: #005F69;
+    --brand-teal-dark: #0F4C52;
+    --brand-teal-surface: #F0FAFB;
+    --brand-ink: #0F172A;
 
-    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    /* Text */
+    --text-primary: var(--brand-ink);
+    --text-secondary: #334155;
+    --text-subtle: #64748B;
+    --text-tertiary: #94A3B8;
+
+    /* Surfaces */
+    --surface-1: #FFFFFF;
+    --surface-2: #F8FAFC;
+    --surface-3: #F1F5F9;
+    --surface-button-secondary: #E2E8F0;
+
+    /* Borders + Semantic */
+    --border-default: #E2E8F0;
+    --color-warning-bg: #FFFBEB;
+    --color-warning-border: #FDE68A;
+    --color-warning-text: #B45309;
+
+    /* Typography */
+    --font-brand: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+
+    /* Glass + shadows */
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-bg-hover: rgba(255, 255, 255, 0.4);
+    --glass-highlight: rgba(255, 255, 255, 0.75);
+    --glass-outline: var(--border-default);
+    --shadow-soft: 0 4px 30px rgba(15, 23, 42, 0.1);
+    --shadow-soft-hover: 0 10px 25px rgba(15, 23, 42, 0.15);
+    --shadow-elevated: 0 15px 30px rgba(15, 23, 42, 0.1);
+
+    /* Compatibility aliases */
+    --color-slate-50: var(--surface-2);
+    --color-slate-100: var(--surface-3);
+    --color-slate-200: var(--border-default);
+    --color-slate-300: #CBD5E1;
+    --color-slate-400: var(--text-tertiary);
+    --color-slate-500: var(--text-subtle);
+    --color-slate-600: #475569;
+    --color-slate-700: var(--text-secondary);
+    --color-slate-800: #1E293B;
+    --color-slate-900: var(--text-primary);
+    --color-accent: var(--brand-teal);
+    --font-sans: var(--font-brand);
 }
 
 /* Reset */
@@ -24,9 +62,9 @@
 
 html,
 body {
-    font-family: var(--font-sans);
-    background-color: var(--color-slate-50);
-    color: var(--color-slate-900);
+    font-family: var(--font-brand);
+    background-color: var(--surface-3);
+    color: var(--text-primary);
     overflow: hidden;
     height: 100dvh;
     width: 100vw;
@@ -73,8 +111,8 @@ canvas {
 
 /* Main Card */
 .card {
-    --bg-color: rgba(255, 255, 255, 0.25);
-    --highlight: rgba(255, 255, 255, 0.75);
+    --bg-color: var(--glass-bg);
+    --highlight: var(--glass-highlight);
 
     position: relative;
     max-width: 600px;
@@ -85,8 +123,8 @@ canvas {
     overflow: hidden;
     z-index: 10;
     animation: fadeUp 1s ease-out;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1),
-    0 0 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-soft),
+    0 0 0 1px var(--glass-outline);
 
     pointer-events: none;
 }
@@ -102,13 +140,13 @@ h1 {
     font-weight: 800;
     margin-bottom: 1rem;
     letter-spacing: -0.025em;
-    color: var(--color-slate-900);
+    color: var(--text-primary);
     text-align: center;
 }
 
 p.bio {
     font-size: 1.125rem;
-    color: var(--color-slate-700);
+    color: var(--text-subtle);
     line-height: 1.6;
     margin-bottom: 2rem;
     text-align: center;
@@ -133,7 +171,7 @@ p.bio {
     border-radius: 1.25rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) backwards;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-elevated);
     pointer-events: all;
 }
 
@@ -146,24 +184,37 @@ p.bio {
 }
 
 .link-item.button.primary {
-    background: var(--color-slate-900);
-    color: white;
+    background: var(--brand-teal);
+    color: var(--surface-1);
 }
 
 .link-item.button.secondary {
-    background: white;
-    color: var(--color-slate-900);
+    background: var(--surface-button-secondary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-default);
 }
 
 .link-item.button:hover {
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    background: white;
+    box-shadow: var(--shadow-elevated);
 }
 
 .link-item.button.primary:hover {
-    background: var(--color-accent);
-    color: white;
+    background: var(--brand-teal-hover);
+    color: var(--surface-1);
+}
+
+.link-item.button.primary:active {
+    background: var(--brand-teal-dark);
+}
+
+.link-item.button.secondary:hover {
+    background: var(--surface-1);
+    color: var(--text-primary);
+}
+
+.link-item.button.secondary:active {
+    background: var(--surface-button-secondary);
 }
 
 .link-item.button:active {
@@ -205,7 +256,7 @@ p.bio {
 .social-link .icon {
     width: 26px;
     height: 26px;
-    color: var(--color-slate-900);
+    color: var(--text-primary);
 }
 
 .social-link:hover .icon {
@@ -234,11 +285,11 @@ p.bio {
     align-items: center;
     justify-content: flex-end;
     gap: 0;
-    background: rgba(255, 255, 255, 0.25);
-    --highlight: rgba(255, 255, 255, 0.75);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1),
-    0 0 0 1px rgba(255, 255, 255, 0.2);
-    color: var(--color-slate-900);
+    background: var(--glass-bg);
+    --highlight: var(--glass-highlight);
+    box-shadow: var(--shadow-soft),
+    0 0 0 1px var(--glass-outline);
+    color: var(--text-primary);
     padding: 10px;
     border: none;
     border-radius: 50px;
@@ -251,10 +302,10 @@ p.bio {
 }
 
 .info-btn:hover {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--glass-bg-hover);
     padding-left: 20px;
     gap: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-soft-hover);
 }
 
 .info-text-wrapper {
