@@ -56,3 +56,5 @@ temp/
 .env
 .env.local
 .env.*.local
+
+planning/
