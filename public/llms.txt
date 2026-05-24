@@ -1,0 +1,22 @@
+# Thomas Kabalin
+
+> Third-year Bachelor of Business Science (Computer Science) student at UCT, Vice-Chancellor's Scholar, and Junior Software Engineer at a Cape Town fintech. Sitting at the intersection of technology and business, with interests in software engineering, data science, AI, consulting, and quantitative finance.
+
+Thomas Kabalin is a South African student and software engineer based in Cape Town, South Africa. As of 2026, he is in his third year of a Bachelor of Business Science (Computer Science) degree at the University of Cape Town (UCT), a four-year programme, with an expected graduation year of 2027. His academic record includes a first-year GPA of 88.13 and a second-year GPA of 85.68.
+
+Academic awards include the Vice-Chancellor's Scholarship, the BSG Prize for the top second-year Computer Science student, the Bain & Company Award (3rd place, first-year BBusSci), class medals for top student in CSC1016S, CSC2002S, and STA2020F, and the Dean's Merit List for 2024 and 2025. He matriculated from Cannons Creek High School with a 96.3% aggregate, 8 distinctions, 99% in three subjects, and placed 2nd in the National Applications Olympiad.
+
+He works part-time as a Junior Software Engineer at Fynbos Technologies, a Cape Town-based fintech company, where he builds backend features in PHP and Laravel. He has also run a digital study materials business since 2021, developing practical skills in sales, marketing, and independent business operations.
+
+Technical proficiencies include Java, Python, C#, PHP (Laravel), and SQL, with working knowledge of HTML, CSS, R, and Delphi. He has extensive experience integrating AI tools and LLM-assisted workflows across academic, professional, and personal contexts.
+
+Previously, he completed a data science job shadow at Prescient Investment Management, where he built a machine learning model estimating U.S. recession probabilities using the Treasury yield curve. His consulting exposure includes attendance at the McKinsey Tech & AI Roundtable, as well as participation in the Deloitte Young Executives Programme. In the computing olympiad community, he serves as External Moderator for the South African Applications Olympiad (2026–present) and as a Scientific Committee member for the South African Programming Olympiad (2024–present).
+
+His professional interests span software engineering, data science, the practical applications of AI, quantitative development, business innovation, and technology-driven problem solving. He is actively exploring careers at the intersection of technology and business, including consulting, finance, and software engineering roles.
+
+## Links
+
+- [CV](https://thomaskabalin.com/cv): Full curriculum vitae including education, work experience, skills, and awards
+- [LinkedIn](https://www.linkedin.com/in/thomaskabalin/): Professional profile and network
+- [GitHub](https://github.com/tkabalin): Personal code repositories and open-source contributions
+- [Contact](mailto:contact@thomaskabalin.com): Direct email contact
