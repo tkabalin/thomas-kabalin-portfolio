@@ -1,0 +1,68 @@
+# thomaskabalin.com — robots.txt
+# Personal portfolio and CV site for Thomas Kabalin
+# AI context file: https://thomaskabalin.com/llms.txt
+
+# ── DEFAULT ──────────────────────────────────────────────────────────────────
+# Allow all crawlers not listed below
+User-agent: *
+Allow: /
+
+# ── OPENAI ───────────────────────────────────────────────────────────────────
+# Source: https://platform.openai.com/docs/gptbot
+
+# GPTBot: crawls content for model training
+User-agent: GPTBot
+Allow: /
+
+# OAI-SearchBot: indexes content for ChatGPT Search citations
+User-agent: OAI-SearchBot
+Allow: /
+
+# ChatGPT-User: fetches pages at a user's direct request
+User-agent: ChatGPT-User
+Allow: /
+
+# ── ANTHROPIC ────────────────────────────────────────────────────────────────
+# Source: https://support.anthropic.com/en/articles/8896518
+
+# ClaudeBot: crawls content for model training
+User-agent: ClaudeBot
+Allow: /
+
+# Claude-SearchBot: indexes content to improve search result quality
+User-agent: Claude-SearchBot
+Allow: /
+
+# Claude-User: retrieves pages at a user's direct request
+User-agent: Claude-User
+Allow: /
+
+# ── GOOGLE ───────────────────────────────────────────────────────────────────
+# Source: https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt
+
+# Googlebot: standard Google Search indexing (also covered by * above)
+User-agent: Googlebot
+Allow: /
+
+# Google-Extended: controls content use for Gemini model training
+User-agent: Google-Extended
+Allow: /
+
+# ── PERPLEXITY ───────────────────────────────────────────────────────────────
+# PerplexityBot: indexes content for Perplexity Search
+User-agent: PerplexityBot
+Allow: /
+
+# Perplexity-User: retrieves pages at a user's direct request
+User-agent: Perplexity-User
+Allow: /
+
+# ── APPLE ────────────────────────────────────────────────────────────────────
+# Applebot-Extended: controls content use for Apple Intelligence model training
+User-agent: Applebot-Extended
+Allow: /
+
+# ── BLOCKED ──────────────────────────────────────────────────────────────────
+# Bytespider (ByteDance): documented history of ignoring robots.txt directives
+User-agent: Bytespider
+Disallow: /
