@@ -1,0 +1,12 @@
+# thomaskabalin.com — security.txt
+# Spec: RFC 9116 — https://www.rfc-editor.org/rfc/rfc9116
+
+# ── REQUIRED ─────────────────────────────────────────────────────────────────
+
+Contact: mailto:contact@thomaskabalin.com
+Expires: 2028-05-24T23:59:59Z
+
+# ── RECOMMENDED ──────────────────────────────────────────────────────────────
+
+Canonical: https://thomaskabalin.com/.well-known/security.txt
+Preferred-Languages: en
