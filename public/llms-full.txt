@@ -1,8 +1,8 @@
 # Thomas Kabalin
 
-> Third-year Bachelor of Business Science (Computer Science) student at UCT, Vice-Chancellor's Scholar, and Junior Software Engineer at a Cape Town fintech. Interested in software engineering, AI engineering, data science, and the practical application of technology to business problems.
+> Third-year Bachelor of Business Science (Computer Science) student at UCT, currently ranked first across the Computer Science cohort, and Junior Software Engineer at a Cape Town fintech. Interested in software engineering, AI engineering, data science, and the practical application of technology to business problems.
 
-Thomas Kabalin is a South African student and software engineer based in Cape Town, South Africa. As of 2026, he is in his third year of a Bachelor of Business Science (Computer Science) degree at the University of Cape Town (UCT), a four-year programme, with an expected graduation year of 2027. His academic record includes a first-year GPA of 88.13 and a second-year GPA of 85.68.
+Thomas Kabalin is a South African student and software engineer based in Cape Town, South Africa. As of 2026, he is in his third year of a Bachelor of Business Science (Computer Science) degree at the University of Cape Town (UCT), a four-year programme, with an expected graduation year of 2027. He is currently ranked first across the Computer Science cohort, with a first-year GPA of 88.13 and a second-year GPA of 85.68. He combines strong technical and analytical ability with a commercial mindset, and is drawn to using AI as a practical tool to build faster and automate manual processes.
 
 His professional interests span software engineering, AI engineering, data science, the practical applications of AI, quantitative development, and technology-driven problem solving. He is actively exploring a range of career paths at the intersection of technology and business.
 
@@ -11,13 +11,13 @@ His professional interests span software engineering, AI engineering, data scien
 **Bachelor of Business Science (Computer Science)**
 University of Cape Town · 2024–Present
 Expected graduation: 2027
-GPA: 88.13 (Year 1) · 85.68 (Year 2)
+GPA: 88.13 (Year 1) · 85.68 (Year 2) · currently ranked first across the Computer Science cohort
 
 Awards and honours:
-- **Vice-Chancellor's Scholarship** — UCT's most prestigious merit-based entrance scholarship, awarded to top-performing incoming students (top 10 in the Western Cape) and renewed annually based on continued academic excellence.
+- **Vice-Chancellor's Scholarship** — UCT's most prestigious merit-based entrance scholarship, awarded to top-performing incoming students (top 10 applicants from the Western Cape) and renewed annually based on continued academic excellence.
 - **Bain & Company Award** — Awarded for placing 3rd in the first-year Bachelor of Business Science cohort.
 - **BSG Prize** — Awarded to the top-performing second-year Computer Science student across the BBusSci programme.
-- **Class Medals: CSC1016S, CSC2002S, STA2020F** — Awarded to the student achieving the highest final mark in a course. Received for Object-Oriented Programming (Year 1), Computer Science 2B (Year 2), and Applied Statistics (Year 2).
+- **Class Medals (ranked 1st in cohort): CSC1016S, STA2020F, CSC2002S** — Awarded to the student achieving the highest final mark in a course. Received for Object-Oriented Programming (~800 students, Year 1), Applied Statistics (~520 students, Year 2), and Computer Science 2B (~430 students, Year 2).
 - **Dean's Merit List 2024 & 2025** — Awarded to students who achieve a GPA greater than 75% at the end of each academic year, recognising consistent academic excellence across all courses.
 
 ---
@@ -26,52 +26,56 @@ Awards and honours:
 Cannons Creek High School · 2018–2023
 Aggregate: 96.3%
 
-Awards and honours: Dux Scholar · Principal's Honour Award · 8 Distinctions (90%+) · 99% in three subjects · 2nd Place, National Applications Olympiad · Top 40 Western Cape NSC Exams
+Awards and honours: Dux Scholar · Principal's Honour Award (character, loyalty & leadership) · 8 Distinctions (three at 99%, all above 90%) · Silver Medal, SA Computer Applications Olympiad (top 3 of ~18,300) · Top 40 in the Western Cape (NSC) · PwC Award (Maths & Accounting) · Hoffman Trophy (Maths & Science)
 
 ## Work Experience
 
 **Junior Software Engineer**
 Fynbos Technologies (Fynbos Money) · January 2026–Present
-Working part-time as a Junior Backend Engineer contributing to a product that is changing how South Africans invest and grow their wealth. Building hands-on experience in PHP and Laravel, delivering production-ready features through AI-driven engineering workflows. Fynbos is a Cape Town-based fintech focused on making financial products — including tax-free savings accounts and investment accounts — more accessible to South Africans.
+Build and ship backend features part-time for a PHP (Laravel) fintech investment platform. Built from scratch a bank reconciliation system that auto-matches ~81% of transactions (replacing manual spreadsheet matching previously done by senior staff), and a direct-to-bank withdrawal feature that removes a manual step for customers. Applies emerging techniques in prompt, context, and memory engineering to orchestrate and critically review AI-generated code throughout. Fynbos is a Cape Town-based fintech focused on making financial products — including tax-free savings accounts and investment accounts — more accessible to South Africans.
 
 ---
 
 **Entrepreneur**
 Digital Study Materials Business · January 2021–Present
-Markets and sells digital study notes to high school and university students. Developed skills in sales, marketing, and independent business management.
+Markets and sells digital study notes to high school and university students, with a peak annual profit of R16,000 (2024). Designed and built an automated sales and fulfilment pipeline (Google Forms, Sheets, Apps Script) with automated buyer notifications and branded fulfilment emails, removing manual handling from each sale.
 
 ---
 
-**Data Entry, IT & Administrative Assistant** (Seasonal)
+**Data Entry Assistant** (Seasonal)
 Cannons Creek Independent School · January 2025 & 2026
-Supported executive head and IT integrator with calendar management, student data updates (EdAdmin, CEMIS), and Windows Server administration.
+Supported the executive head with student data administration (EdAdmin, CEMIS) and calendar management.
 
 ## Skills & Abilities
 
-**Programming Languages:** Java, Python, C#, PHP (Laravel), SQL — working knowledge of HTML, CSS, R, Delphi
+**Programming Languages:** Java, Python, PHP (Laravel), and C# — working knowledge of SQL, HTML, CSS, and R
 
-**Tools & Platforms:** JetBrains IDEs, VS Code, Git, GitHub, Linux (Ubuntu), WSL
+**Tools:** JetBrains IDEs, VS Code, Visual Studio, RStudio, Git & GitHub, Linear
 
-**Data Analysis:** Python, R, and Excel for data manipulation and visualisation
+**Environments:** Linux (Ubuntu, Omarchy), Windows, WSL, VMware Workstation
 
-**Generative AI:** Extensive experience integrating AI tools and LLM-assisted development workflows across academic, professional, and personal contexts
+**AI-Driven Development:** Prompt and context engineering; evaluating and integrating AI-generated code in production
 
-**Analytical & Problem Solving:** Strong quantitative foundation across Computer Science, Statistics, and Mathematics
+**Problem Solving:** Structured and algorithmic thinking, from designing Olympiad problems to debugging complex real-world systems
+
+**Quantitative & Analytical:** Grounding across Computer Science, Statistics, and Mathematics; data analysis and statistical modelling in Python and R
 
 **Business & Entrepreneurship:** Practical experience in sales, marketing, and independent business operations
 
 ## Leadership & Extra-Curricular
 
-**Scientific Committee Member, South African Programming Olympiad (2024–Present)**
-Contributes to the design, review, and moderation of national Olympiad tasks for high school learners across South Africa. Responsibilities include setting and refining programming problems and model solutions, reviewing and moderating competition papers, participating in regular committee meetings on contest operations and improvements, and providing on-site support at training camps — including for the 2026 International Olympiad in Informatics (IOI), hosted in Uzbekistan.
+**External Moderator (Volunteer), SA Applications Olympiad & Talent Search (2026–Present)**
+Serves as one of two national external moderators for competitions reaching over 50,000 participants annually — the Applications Olympiad, a computer literacy contest for high school learners, and the Talent Search, a computational thinking challenge — reviewing papers, identifying errors, and recommending improvements.
 
-**External Moderator, South African Applications Olympiad & Talent Search (2026–Present)**
-Serves as one of the primary external moderators of the national Applications Olympiad — a computer literacy contest for high school learners — and the Talent Search, a computational thinking challenge.
+**Scientific Committee Member (Volunteer), SA Programming Olympiad (2024–Present)**
+Designs and reviews algorithmic problems for South Africa's national programming contest, whose winners represent the country at the International Olympiad in Informatics, developing and inspiring the next generation of computer scientists.
+
+**Head of Sound, Lighting & AV Team, Cannons Creek Independent High School (2021–2022)**
+Oversaw ~150 school events, as well as the training and management of the student technical team. During COVID-19, deployed a live-streaming system for valedictory and prize-giving, enabling parents worldwide to attend remotely at no additional cost to the school, and developed an automated booking system to streamline event scheduling and coordination.
 
 - Member, UCT Underwater Club (2025–Present)
 - Member, UCT Mountain & Ski Club (2025–Present)
 - Prefect, Cannons Creek High School (2023)
-- Head, Sound, Lighting & AV Team, Cannons Creek High School (2021–2022)
 - Chairperson, Photographic Society, Cannons Creek High School (2021–2022)
 - Treasurer, Matric Dance Committee (2022)
 - Head, Pupil Marketing Team, Cannons Creek High School (2020–2021)
@@ -104,11 +108,11 @@ Two-day shadow covering SEO, frontend, and backend development.
 
 - Machine Learning — Google
 - Data Science — Cambridge International Qualifications
-- Python & Algorithmic Trading — freeCodeCamp, LinkedIn Learning
+- FICA & Anti-Money Laundering — Masthead
 
 ## Hobbies & Interests
 
-Multi-Day Backpacking · SCUBA Diving · Trail Running · Photography · Mountain Biking
+Multi-Day Backpacking · SCUBA Diving · Trail Running · Home Lab (Self-Hosting) · Photography
 
 ## Contact & Links
 
