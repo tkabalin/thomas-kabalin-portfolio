@@ -21,7 +21,7 @@ Any unauthorized use of the Work constitutes a violation of copyright law and ma
 
 Requests for permission to use, copy, distribute, or modify the Work must be submitted in writing to:
 
-[thomas@kabalin.com](mailto:thomas@kabalin.com)
+[contact@thomaskabalin.com](mailto:contact@thomaskabalin.com)
 
 The copyright holder may grant or deny permission at their sole discretion.
 
